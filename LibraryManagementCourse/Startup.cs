@@ -6,6 +6,10 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using LibraryManagementCourse.Data.Interfaces;
+using LibraryManagementCourse.Data.Repository;
+using LibraryManagementCourse.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace LibraryManagementCourse
 {
@@ -21,6 +25,12 @@ namespace LibraryManagementCourse
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<LibraryDbContext>(options => options.UseInMemoryDatabase("LibraryContext"));
+
+            services.AddTransient<ICustomerRepository, CustomerRepository>();
+            services.AddTransient<IAuthorRepository, AuthorRepository>();
+            services.AddTransient<IBookRepository, BookRepository>();
+
             services.AddMvc();
         }
 
