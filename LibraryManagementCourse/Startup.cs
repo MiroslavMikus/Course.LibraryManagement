@@ -28,7 +28,9 @@ namespace LibraryManagementCourse
             services.AddDbContext<LibraryDbContext>(options => options.UseInMemoryDatabase("LibraryContext"));
 
             services.AddTransient<ICustomerRepository, CustomerRepository>();
+
             services.AddTransient<IAuthorRepository, AuthorRepository>();
+
             services.AddTransient<IBookRepository, BookRepository>();
 
             services.AddMvc();
@@ -55,6 +57,7 @@ namespace LibraryManagementCourse
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+            DbInitializer.Seed(app);
         }
     }
 }
