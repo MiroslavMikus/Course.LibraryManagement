@@ -1,5 +1,6 @@
 ﻿using LibraryManagementCourse.Data.Interfaces;
 using LibraryManagementCourse.Data.Model;
+using LibraryManagementCourse.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,7 @@ namespace LibraryManagementCourse.Controllers
 
         public IActionResult List(int? authorId, int? borrowerId)
         {
-            if(authorId == null && borrowerId == null)
+            if (authorId == null && borrowerId == null)
             {
                 // show all books
                 var books = _bookRepository.GetAllWithAuthor();
@@ -68,6 +69,50 @@ namespace LibraryManagementCourse.Controllers
             {
                 return View(books);
             }
+        }
+
+        public IActionResult Create()
+        {
+            var bookVM = new BookViewModel()
+            {
+                Authors = _authorRepository.GetAll()
+            };
+            return View(bookVM);
+        }
+
+        [HttpPost]
+        public IActionResult Create(BookViewModel bookViewModel)
+        {
+            _bookRepository.Create(bookViewModel.Book);
+
+            return RedirectToAction("List");
+        }
+
+        public IActionResult Update(int id)
+        {
+            var bookVM = new BookViewModel()
+            {
+                Book = _bookRepository.GetById(id),
+                Authors = _authorRepository.GetAll()
+            };
+            return View(bookVM);
+        }
+
+        [HttpPost]
+        public IActionResult Update(BookViewModel bookViewModel)
+        {
+            _bookRepository.Update(bookViewModel.Book);
+
+            return RedirectToAction("List");
+        }
+
+        public IActionResult Delete(int id)
+        {
+            var book = _bookRepository.GetById(id);
+
+            _bookRepository.Delete(book);
+
+            return RedirectToAction("List");
         }
     }
 }
