@@ -20,6 +20,7 @@ namespace LibraryManagementCourse.Controllers
             _authorRepository = authorRepository;
         }
 
+        [Route("Book")]
         public IActionResult List(int? authorId, int? borrowerId)
         {
             if (authorId == null && borrowerId == null)
