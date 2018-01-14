@@ -22,15 +22,15 @@ namespace LibraryManagementCourse.Controllers
         public IActionResult List()
         {
             // load all available books
-            var availableBooks = _bookRepository.Find(x => x.BorrowerId == 0);
+            var availableBooks = _bookRepository.FindWithAuthor(x => x.BorrowerId == 0);
             // check collection
             if (availableBooks.Count() == 0)
             {
-                return View(availableBooks);
+                return View("Empty");
             }
             else
             {
-                return View("Empty");
+                return View(availableBooks);
             }
         }
 
