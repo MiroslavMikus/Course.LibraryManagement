@@ -18,10 +18,11 @@ namespace LibraryManagementCourse.Controllers
             _customerRepository = customerRepository;
         }
 
+        [Route("Return")]
         public IActionResult List()
         {
             // load all borrowed books
-            var borrowedBooks = _bookRepository.FindWithAuthorAndBorrower(x => x.BorrowerId == 0);
+            var borrowedBooks = _bookRepository.FindWithAuthorAndBorrower(x => x.BorrowerId != 0);
             // Check the books collection
             if(borrowedBooks == null || borrowedBooks.ToList().Count() == 0)
             {
@@ -30,7 +31,7 @@ namespace LibraryManagementCourse.Controllers
             return View(borrowedBooks);
         }
 
-        public IActionResult ReturABook(int bookId)
+        public IActionResult ReturnABook(int bookId)
         {
             // load the current book
             var book = _bookRepository.GetById(bookId);
