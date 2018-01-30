@@ -84,6 +84,12 @@ namespace LibraryManagementCourse.Controllers
         [HttpPost]
         public IActionResult Create(BookViewModel bookViewModel)
         {
+            if (!ModelState.IsValid)
+            {
+                bookViewModel.Authors = _authorRepository.GetAll();
+                return View(bookViewModel);
+            }
+
             _bookRepository.Create(bookViewModel.Book);
 
             return RedirectToAction("List");
@@ -102,6 +108,12 @@ namespace LibraryManagementCourse.Controllers
         [HttpPost]
         public IActionResult Update(BookViewModel bookViewModel)
         {
+            if (!ModelState.IsValid)
+            {
+                bookViewModel.Authors = _authorRepository.GetAll();
+                return View(bookViewModel);
+            }
+
             _bookRepository.Update(bookViewModel.Book);
 
             return RedirectToAction("List");
