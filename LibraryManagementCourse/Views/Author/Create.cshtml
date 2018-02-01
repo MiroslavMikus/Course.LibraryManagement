@@ -1,13 +1,14 @@
-﻿@model Author
+﻿@model CreateAuthorViewModel
 
 <div class="row orderForm">
     <form asp-controller="Author" asp-action="Create" method="post" class="form-horizontal" role="form">
+        @Html.HiddenFor(x => x.Referer)
         <h3 class="col-md-offset-2">Create new author</h3>
         <div class="form-group">
-            <label asp-for="Name" class="col-md-2 control-label"></label>
+            <label asp-for="Author.Name" class="col-md-2 control-label"></label>
             <div class="col-md-6">
-                <input asp-for="Name" class="form-control" placeholder="Enter authors name" />
-                <span asp-validation-for="Name" class="text-danger"></span>
+                <input asp-for="Author.Name" class="form-control" placeholder="Enter authors name" />
+                <span asp-validation-for="Author.Name" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group">
