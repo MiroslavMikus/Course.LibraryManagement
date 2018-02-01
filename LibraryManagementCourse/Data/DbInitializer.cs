@@ -1,4 +1,4 @@
-﻿using LibraryManagementCourse.Data.Model;
+﻿using LibraryManagement.Data.Model;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace LibraryManagementCourse.Data
+namespace LibraryManagement.Data
 {
     public static class DbInitializer
     {

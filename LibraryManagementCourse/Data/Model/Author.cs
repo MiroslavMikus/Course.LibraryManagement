@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace LibraryManagementCourse.Data.Model
+namespace LibraryManagement.Data.Model
 {
     public class Author
     {

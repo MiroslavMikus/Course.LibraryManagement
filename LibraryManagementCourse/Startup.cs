@@ -6,12 +6,12 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using LibraryManagementCourse.Data.Interfaces;
-using LibraryManagementCourse.Data.Repository;
-using LibraryManagementCourse.Data;
+using LibraryManagement.Data.Interfaces;
+using LibraryManagement.Data.Repository;
+using LibraryManagement.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace LibraryManagementCourse
+namespace LibraryManagement
 {
     public class Startup
     {

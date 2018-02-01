@@ -1,11 +1,11 @@
-﻿using LibraryManagementCourse.Data.Model;
+﻿using LibraryManagement.Data.Model;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace LibraryManagementCourse.Data
+namespace LibraryManagement.Data
 {
     public class LibraryDbContext : DbContext
     {

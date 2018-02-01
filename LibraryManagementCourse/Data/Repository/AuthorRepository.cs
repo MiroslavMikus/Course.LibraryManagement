@@ -1,12 +1,12 @@
-﻿using LibraryManagementCourse.Data.Interfaces;
+﻿using LibraryManagement.Data.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using LibraryManagementCourse.Data.Model;
+using LibraryManagement.Data.Model;
 using Microsoft.EntityFrameworkCore;
 
-namespace LibraryManagementCourse.Data.Repository
+namespace LibraryManagement.Data.Repository
 {
     public class AuthorRepository : Repository<Author>, IAuthorRepository
     {

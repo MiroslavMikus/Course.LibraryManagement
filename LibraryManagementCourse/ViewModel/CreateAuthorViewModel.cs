@@ -1,10 +1,6 @@
-﻿using LibraryManagementCourse.Data.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using LibraryManagement.Data.Model;
 
-namespace LibraryManagementCourse.ViewModel
+namespace LibraryManagement.ViewModel
 {
     public class CreateAuthorViewModel
     {

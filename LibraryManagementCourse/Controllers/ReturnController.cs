@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using LibraryManagementCourse.Data.Interfaces;
+using LibraryManagement.Data.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
-namespace LibraryManagementCourse.Controllers
+namespace LibraryManagement.Controllers
 {
     public class ReturnController : Controller
     {

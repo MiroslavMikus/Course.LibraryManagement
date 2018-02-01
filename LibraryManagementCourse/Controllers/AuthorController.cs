@@ -1,13 +1,11 @@
-﻿using LibraryManagementCourse.Data.Interfaces;
-using LibraryManagementCourse.Data.Model;
-using LibraryManagementCourse.ViewModel;
+﻿using LibraryManagement.Data.Interfaces;
+using LibraryManagement.Data.Model;
+using LibraryManagement.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
-namespace LibraryManagementCourse.Controllers
+namespace LibraryManagement.Controllers
 {
     public class AuthorController : Controller
     {

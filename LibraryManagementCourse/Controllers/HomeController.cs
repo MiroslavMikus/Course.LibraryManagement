@@ -4,11 +4,11 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using LibraryManagementCourse.Models;
-using LibraryManagementCourse.Data.Interfaces;
-using LibraryManagementCourse.ViewModel;
+using LibraryManagement.Models;
+using LibraryManagement.Data.Interfaces;
+using LibraryManagement.ViewModel;
 
-namespace LibraryManagementCourse.Controllers
+namespace LibraryManagement.Controllers
 {
     public class HomeController : Controller
     {
